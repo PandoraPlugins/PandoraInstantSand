@@ -29,7 +29,7 @@ public class Main extends JavaPlugin implements Listener {
         int y = (int)placeLocation.getY() - 1;
         for (int i = y; i >= 0; --i) {
             Block block = world.getBlockAt(x, i, z);
-            if (block.getType() != Material.AIR) {
+            if (block.getType() != Material.AIR && !block.isLiquid()) {
                 place.getBlock().setType(Material.AIR);
                 world.getBlockAt(x, i+1, z).setType(START_MATERIAL);
                 if (isRedSand) {
